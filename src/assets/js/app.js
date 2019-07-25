@@ -14,4 +14,6 @@ $(document).ready(function() {
         $('#home-gbp').html( String("<h4>" + gbpExchangeRate.toLocaleString() + "</h4>"));
         $('#home-chf').html( String("<h4>" + chfExchangeRate.toLocaleString() + "</h4>"));
     });
+
+    
 });
