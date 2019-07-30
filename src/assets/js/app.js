@@ -30,3 +30,10 @@ function getMainExchangeRates() {
         $('#home-chf').html( String("<h4>" + chfExchangeRate.toLocaleString() + "</h4>"));
     });
 }
+
+function getStockCertificatesData() {
+    let queryString = 'https://api.worldtradingdata.com/api/v1/stock?symbol=AAPL,MSFT,HSBA.L&api_token=' + apiToken;
+    $.getJSON(queryString, function(data) {
+        
+    })
+}
