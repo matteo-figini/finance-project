@@ -1,39 +1,36 @@
-var eurExchangeRates;
-
-var usdExchangeRate = 0;
-var gbpExchangeRate = 0;
-var chfExchangeRate = 0;
-
 var apiToken = 'NwaholOJI3Jh0H0896iWzSdXx4jcIOyeeHJHzi2hqtm6LQGdSUMU4KSs1fK5';
-
-var StockCertificate = function() {
-    this.name = "";
-    this.symbol = "";
-    this.actualValue = 0;
-    this.changePct = 0;
-};
-
-var stockCertificates = [];
 
 $(document).ready(function() {
     getMainExchangeRates();
+    getStockCertificatesData();
 });
 
 function getMainExchangeRates() {
     $.getJSON('https://api.exchangeratesapi.io/latest', function(data) {
-        eurExchangeRates = JSON.parse(JSON.stringify(data));
-        usdExchangeRate = eurExchangeRates.rates.USD;
-        gbpExchangeRate = eurExchangeRates.rates.GBP;
-        chfExchangeRate = eurExchangeRates.rates.CHF;
-        $('#home-usd').html( String("<h4>" + usdExchangeRate.toLocaleString() + "</h4>"));
-        $('#home-gbp').html( String("<h4>" + gbpExchangeRate.toLocaleString() + "</h4>"));
-        $('#home-chf').html( String("<h4>" + chfExchangeRate.toLocaleString() + "</h4>"));
-    });
+        let eurExchangeRates = JSON.parse(JSON.stringify(data));
+        $('#home-usd').html( String("<h4>" + eurExchangeRates.rates.USD.toLocaleString() + "</h4>"));
+        $('#home-gbp').html( String("<h4>" + eurExchangeRates.rates.GBP.toLocaleString() + "</h4>"));
+        $('#home-chf').html( String("<h4>" + eurExchangeRates.rates.CHF.toLocaleString() + "</h4>"));
+    })
 }
 
 function getStockCertificatesData() {
-    let queryString = 'https://api.worldtradingdata.com/api/v1/stock?symbol=AAPL,MSFT,HSBA.L&api_token=' + apiToken;
+    let queryString = 'https://api.worldtradingdata.com/api/v1/stock?symbol=';
+    queryString += '^FTSEMIB,^DJI,^NDX';
+    queryString += '&api_token=';
+    queryString += apiToken;
     $.getJSON(queryString, function(data) {
-        
+        let quotationFile = JSON.parse(JSON.stringify(data));
+        for (let i = 0; i < quotationFile.data.length; i++) {
+            if (quotationFile.data[i].symbol == '^FTSEMIB') {
+                $('#home-ftse').html('<h4>' + quotationFile.data[i].price + ' (' + quotationFile.data[i].change_pct +')' + '</h4>');
+            }
+            else if (quotationFile.data[i].symbol == '^DJI') {
+                $('#home-dowj').html('<h4>' + quotationFile.data[i].price + ' (' + quotationFile.data[i].change_pct +')' + '</h4>');
+            }
+            else if (quotationFile.data[i].symbol == '^NDX') {
+                $('#home-nas').html('<h4>' + quotationFile.data[i].price + ' (' + quotationFile.data[i].change_pct +')' + '</h4>');
+            }
+        }
     })
 }
