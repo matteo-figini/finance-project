@@ -6,16 +6,19 @@
     <input type="button" id="searchStockButton" value="Cerca">
     <div class="result-container"><br>
         <div id="number-limit-result"></div>
-        <table class="w3-table">
+        <table class="w3-table w3-striped">
             <thead>
                 <th>Nome</th>
                 <th>Simbolo</th>
                 <th>Valuta</th>
                 <th>Prezzo</th>
+                <th></th>
             </thead>
             <tbody id="stock-table-body">
             </tbody>
         </table>
+        <br><hr>
+        <div id="stock-title-link-details"></div>
     </div>
 </div>
 
@@ -32,7 +35,7 @@
             for(var i = 0; i < searchResults.total_returned; i++) {
                 $table.innerHTML += '<tr><td>' + searchResults.data[i].name + '</td><td>' + searchResults.data[i].symbol +
                 '</td><td>' + searchResults.data[i].currency + '</td><td>' + searchResults.data[i].price + '</td><td>' +
-                '</td></tr>';
+                '</td><td><input type="button" class="expand-value" value="+" onclick="openExternalLink(this.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML)"></td></tr>';
             }
         })
     })

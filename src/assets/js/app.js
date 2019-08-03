@@ -34,3 +34,18 @@ function getStockCertificatesData() {
         }
     })
 }
+
+function openExternalLink(stockSymbol) {
+    let queryString = 'https://api.worldtradingdata.com/api/v1/history?symbol=';
+    queryString += stockSymbol;
+    queryString += '&sort=newest&api_token=' + apiToken;
+    let link = 'https://www.worldtradingdata.com/stock/';
+
+    if(stockSymbol.charAt(0) === '^') {
+        link += "%5E";
+        stockSymbol = stockSymbol.substring(1);
+    }
+    link += stockSymbol;
+
+    $('#stock-title-link-details').html('<a href="'+ link + '" target="_new">Mostra ulteriori dettagli in World Trading Data</a>');
+}
