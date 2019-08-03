@@ -49,3 +49,7 @@ function openExternalLink(stockSymbol) {
 
     $('#stock-title-link-details').html('<a href="'+ link + '" target="_new">Mostra ulteriori dettagli in World Trading Data</a>');
 }
+
+$('#button-converti').on('click', function() {
+    
+})

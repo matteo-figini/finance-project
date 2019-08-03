@@ -16,8 +16,7 @@
             </thead>
             <tbody id="stock-table-body">
             </tbody>
-        </table>
-        <br><hr>
+        </table><hr>
         <div id="stock-title-link-details"></div>
     </div>
 </div>
