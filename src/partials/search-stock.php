@@ -25,16 +25,29 @@
     $('#searchStockButton').on('click', function() {
         let $table = document.getElementById('stock-table-body');
         let queryString = 'https://api.worldtradingdata.com/api/v1/stock_search?search_term=';
+        var externalLink = '';
+        var editedLink = '';
         queryString += document.getElementById('searchStock').value;
         queryString += '&search_by=symbol,name&limit=50&page=1&api_token=NwaholOJI3Jh0H0896iWzSdXx4jcIOyeeHJHzi2hqtm6LQGdSUMU4KSs1fK5';
+
         $.getJSON(queryString, function(data) {
             let searchResults = JSON.parse(JSON.stringify(data));
             $('#number-limit-result').html('Numero di risultati: '+ searchResults.total_returned + '.<br>' + searchResults.message);
             $table.innerHTML = '';
+
             for(var i = 0; i < searchResults.total_returned; i++) {
+                externalLink = 'https://www.worldtradingdata.com/stock/';
+                if(searchResults.data[i].symbol.charAt(0) === '^') {
+                    externalLink += "%5E";
+                    editedLink = searchResults.data[i].symbol.substring(1);
+                }
+                else {
+                    editedLink = searchResults.data[i].symbol;
+                }
+                externalLink += editedLink;
                 $table.innerHTML += '<tr><td>' + searchResults.data[i].name + '</td><td>' + searchResults.data[i].symbol +
                 '</td><td>' + searchResults.data[i].currency + '</td><td>' + searchResults.data[i].price + '</td><td>' +
-                '</td><td><input type="button" class="expand-value" value="+" onclick="openExternalLink(this.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML)"></td></tr>';
+                '<a href="' + externalLink + '" target="_blank"><i class="fas fa-angle-double-right"></i></a> </td></tr>';
             }
         })
     })

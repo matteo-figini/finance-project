@@ -4,7 +4,7 @@
         <title>Home - Finance Project</title>
         <?php include '../../partials/head-section.php'; ?>
     </head>
-    <body>
+    <body onload="loadHomeElements()">
         <div> <?php include '../../partials/top-container.php'; ?> </div>
         <div> <?php include '../../partials/sidebar-menu.php'; ?> </div>
         <div class="w3-overlay w3-hide-large w3-animate-opacity" style="cursor:pointer" title="close side menu" id="myOverlay"></div>

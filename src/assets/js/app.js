@@ -1,9 +1,9 @@
 var apiToken = 'NwaholOJI3Jh0H0896iWzSdXx4jcIOyeeHJHzi2hqtm6LQGdSUMU4KSs1fK5';
 
-$(document).ready(function() {
+function loadHomeElements() {
     getMainExchangeRates();
     getStockCertificatesData();
-});
+}
 
 function getMainExchangeRates() {
     $.getJSON('https://api.exchangeratesapi.io/latest', function(data) {
@@ -33,21 +33,6 @@ function getStockCertificatesData() {
             }
         }
     })
-}
-
-function openExternalLink(stockSymbol) {
-    let queryString = 'https://api.worldtradingdata.com/api/v1/history?symbol=';
-    queryString += stockSymbol;
-    queryString += '&sort=newest&api_token=' + apiToken;
-    let link = 'https://www.worldtradingdata.com/stock/';
-
-    if(stockSymbol.charAt(0) === '^') {
-        link += "%5E";
-        stockSymbol = stockSymbol.substring(1);
-    }
-    link += stockSymbol;
-
-    $('#stock-title-link-details').html('<a href="'+ link + '" target="_new">Mostra ulteriori dettagli in World Trading Data</a>');
 }
 
 function convertiValuta() {
