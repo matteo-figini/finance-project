@@ -27,6 +27,12 @@
         let queryString = 'https://api.worldtradingdata.com/api/v1/stock_search?search_term=';
         var externalLink = '';
         var editedLink = '';
+        var stockTitle = {
+            name: "",
+            symbol: "",
+            currency: "",
+            price: 0
+        }
         queryString += document.getElementById('searchStock').value;
         queryString += '&search_by=symbol,name&limit=50&page=1&api_token=NwaholOJI3Jh0H0896iWzSdXx4jcIOyeeHJHzi2hqtm6LQGdSUMU4KSs1fK5';
 
@@ -37,16 +43,25 @@
 
             for(var i = 0; i < searchResults.total_returned; i++) {
                 externalLink = 'https://www.worldtradingdata.com/stock/';
-                if(searchResults.data[i].symbol.charAt(0) === '^') {
+                stockTitle.name = searchResults.data[i].name;
+                stockTitle.symbol = searchResults.data[i].symbol;
+                stockTitle.currency = searchResults.data[i].currency;
+                stockTitle.price = searchResults.data[i].price;
+
+                if(stockTitle.symbol.charAt(0) === '^') {
                     externalLink += "%5E";
-                    editedLink = searchResults.data[i].symbol.substring(1);
+                    editedLink = stockTitle.symbol.substring(1);
                 }
                 else {
-                    editedLink = searchResults.data[i].symbol;
+                    editedLink = stockTitle.symbol;
                 }
                 externalLink += editedLink;
-                $table.innerHTML += '<tr><td>' + searchResults.data[i].name + '</td><td>' + searchResults.data[i].symbol +
-                '</td><td>' + searchResults.data[i].currency + '</td><td>' + searchResults.data[i].price + '</td><td>' +
+                $table.innerHTML += '<tr><td>' + stockTitle.name + '</td><td>' + stockTitle.symbol +
+                '</td><td>' + stockTitle.currency + '</td><td>' + stockTitle.price + '</td><td>' +
+                '<i class="fas fa-plus-circle" onclick="addStockToDatabase(this.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML,' +
+                'this.parentNode.previousSibling.previousSibling.previousSibling.innerHTML,' +
+                'this.parentNode.previousSibling.previousSibling.innerHTML,' +
+                'this.parentNode.previousSibling.innerHTML' + ')"></i>&nbsp&nbsp' +
                 '<a href="' + externalLink + '" target="_blank"><i class="fas fa-angle-double-right"></i></a> </td></tr>';
             }
         })
