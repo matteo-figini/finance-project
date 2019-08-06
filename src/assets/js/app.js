@@ -169,6 +169,7 @@ function convertiValuta() {
                     alert("Non è stato possibile portare a termine la conversione");
             }
             convertedValue = valueToConvert * exchangeRate;
+            convertedValue = convertedValue.toLocaleString();
             $('#valore-finale').val(convertedValue);
         })
     }

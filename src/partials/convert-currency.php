@@ -6,7 +6,7 @@
     <select class="w3-select currency-selector" id="select-currency-first"></select>
     <p>corrispondono a:</p>
     <input type="number" id="valore-finale" readonly>
-    <select class="w3-select currency-selector" id="select-currency-last"></select>
+    <select class="w3-select currency-selector" id="select-currency-last" onchange="convertiValuta()"></select>
     <br>
     <input type="button" class="w3-btn w3-light-gray" id="button-converti" value="Converti" onclick="convertiValuta()">
 </div>
