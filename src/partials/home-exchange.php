@@ -1,7 +1,7 @@
 <header class="w3-container" style="padding-top:22px">
-    <h5>1 Euro corrisponde a:</h5>
+    <h5><b>1 Euro</b> corrisponde a:</h5>
 </header>
-<div id="exchange-container" class="w3-row-padding w3-margin-bottom" onload="getExchangeValues()">
+<div id="exchange-container" class="w3-row-padding w3-margin-bottom">
     <div class="w3-third">
         <div class="w3-container w3-red w3-padding-16">
             <div class="w3-left"><i class="fas fa-dollar-sign fa-3x"></i></div>

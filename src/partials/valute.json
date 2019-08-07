@@ -1,0 +1,132 @@
+{
+    "valute": [
+        {
+            "nome": "Euro",
+            "abbreviazione": "EUR"
+        },
+        {
+            "nome": "Dollaro Canadese",
+            "abbreviazione": "CAD"
+        },
+        {
+            "nome": "Dollaro di Hong Kong",
+            "abbreviazione": "HKD"
+        },
+        {
+            "nome": "Nuovo Shekel Israeliano",
+            "abbreviazione": "ISK"
+        },
+        {
+            "nome": "Peso Filippino",
+            "abbreviazione": "PHP"
+        },
+        {
+            "nome": "Corona Danese",
+            "abbreviazione": "DKK"
+        },
+        {
+            "nome": "Fiorino Ungherese",
+            "abbreviazione": "HUF"
+        },
+        {
+            "nome": "Corona Ceca",
+            "abbreviazione": "CZK"
+        },
+        {
+            "nome": "Dollaro Australiano",
+            "abbreviazione": "AUD"
+        },
+        {
+            "nome": "Leu Rumeno",
+            "abbreviazione": "RON"
+        },
+        {
+            "nome": "Corona Svedese",
+            "abbreviazione": "SEK"
+        },
+        {
+            "nome": "Rupia Indonesiana",
+            "abbreviazione": "IDR"
+        },
+        {
+            "nome": "Rupia Indiana",
+            "abbreviazione": "INR"
+        },
+        {
+            "nome": "Real Brasiliano",
+            "abbreviazione": "BRL"
+        },
+        {
+            "nome": "Rublo Russo",
+            "abbreviazione": "RUB"
+        },
+        {
+            "nome": "Kuna Croata",
+            "abbreviazione": "HRK"
+        },
+        {
+            "nome": "Yen Giapponese",
+            "abbreviazione": "JPY"
+        },
+        {
+            "nome": "Baht Thailandese",
+            "abbreviazione": "THB"
+        },
+        {
+            "nome": "Franco Svizzero",
+            "abbreviazione": "CHF"
+        },
+        {
+            "nome": "Dollaro di Singapore",
+            "abbreviazione": "SGD"
+        },
+        {
+            "nome": "Złoty Polacco",
+            "abbreviazione": "PLN"
+        },
+        {
+            "nome": "Lev Bulgaro",
+            "abbreviazione": "BGN"
+        },
+        {
+            "nome": "Lira Turca",
+            "abbreviazione": "TRY"
+        },
+        {
+            "nome": "Renminbi Cinese",
+            "abbreviazione": "CNY"
+        },
+        {
+            "nome": "Corona Norvegese",
+            "abbreviazione": "NOK"
+        },
+        {
+            "nome": "Dollaro Neozelandese",
+            "abbreviazione": "NZD"
+        },
+        {
+            "nome": "Rand Sudafricano",
+            "abbreviazione": "ZAR"
+        },
+        {
+            "nome": "Dollaro Statunitense",
+            "abbreviazione": "USD"
+        },
+        {
+            "nome": "Peso Messicano",
+            "abbreviazione": "MXN"
+        },
+        {
+            "nome": "Sterlina Britannica",
+            "abbreviazione": "GBP"
+        },
+        {
+            "nome": "Won Sudcoreano",
+            "abbreviazione": "KRW"
+        },
+        {
+            "nome": "Ringgit Malese",
+            "abbreviazione": "MYR"
+        }
+    ]
+}
