@@ -7,6 +7,6 @@
         <a href="../watch-stock/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Monitora i titoli</a>
         <a href="../convert-currency/index.php" class="w3-bar-item w3-button w3-padding"><i class="fas fa-hand-holding-usd"></i>  Converti una valuta</a>
         <hr>
-        <a href="../my-wallet/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Area personale</a>
+        <a href="../my-wallet/index.php" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  La mia borsa</a>
     </div>
 </nav>
