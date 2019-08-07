@@ -13,10 +13,16 @@ if ($conn->connect_error) {
 $stockName = $_GET['name'];
 $stockSymbol = $_GET['symbol'];
 $stockCurrency = $_GET['currency'];
-$stockPrice = $_GET['price'];
-echo $stockSymbol;
-//
-// $sql = "INSERT INTO Titoli (Nome, Simbolo) VALUES ('{$stockName}', '{$stockSymbol}');";
-// $result = $conn->query($sql);
-// $conn->close();
+echo $stockName.", ".$stockSymbol.", ".$stockCurrency;
+
+$sql = "INSERT INTO Titoli (Nome, Simbolo, Valuta)
+VALUES ('{$stockName}', '{$stockSymbol}', '{$stockCurrency}')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . ". " . $conn->error;
+}
+
+$conn->close();
 ?>
