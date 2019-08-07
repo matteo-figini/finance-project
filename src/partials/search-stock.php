@@ -60,8 +60,7 @@
                 '</td><td>' + stockTitle.currency + '</td><td>' + stockTitle.price + '</td><td>' +
                 '<i class="fas fa-plus-circle" onclick="addStockToDatabase(this.parentNode.previousSibling.previousSibling.previousSibling.previousSibling.innerHTML,' +
                 'this.parentNode.previousSibling.previousSibling.previousSibling.innerHTML,' +
-                'this.parentNode.previousSibling.previousSibling.innerHTML,' +
-                'this.parentNode.previousSibling.innerHTML' + ')"></i>&nbsp&nbsp' +
+                'this.parentNode.previousSibling.previousSibling.innerHTML)"></i>&nbsp&nbsp' +
                 '<a href="' + externalLink + '" target="_blank"><i class="fas fa-angle-double-right"></i></a> </td></tr>';
             }
         })

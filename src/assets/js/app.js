@@ -159,7 +159,7 @@ function convertiValuta() {
     }
 }
 
-function addStockToDatabase(stockName, stockSymbol, stockCurrency, stockPrice) {
+function addStockToDatabase(stockName, stockSymbol, stockCurrency) {
     var xhttp = new XMLHttpRequest();
     var url = '../../assets/backend/add-stock.php?name=' + stockName + '&symbol=' +
     stockSymbol + '&currency=' + stockCurrency;
@@ -175,6 +175,44 @@ function addStockToDatabase(stockName, stockSymbol, stockCurrency, stockPrice) {
 function deleteStockFromDB(stockId) {
     var xhttp = new XMLHttpRequest();
     var url = '../../assets/backend/delete-stock.php?id=' + stockId;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function addCurrencyToDB(currency) {
+    var currencyName;
+    var currencyAbbreviation = currency;
+    $.getJSON('../../data/valute.json', function(data) {
+        for (i = 0; i < data.valute.length; i++) {
+            if (data.valute[i].abbreviazione === currencyAbbreviation) {
+                currencyName = data.valute[i].nome;
+                addCurrencyToDatabase(currencyName, currencyAbbreviation);
+            }
+        }
+    });
+}
+
+function addCurrencyToDatabase(nome, abbreviazione) {
+    var xhttp = new XMLHttpRequest();
+    var url = '../../assets/backend/add-currency.php?name=' + nome + '&abbreviation=' +
+    abbreviazione;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function deleteCurrencyFromDB(currencyId) {
+    var xhttp = new XMLHttpRequest();
+    var url = '../../assets/backend/delete-currency.php?id=' + currencyId;
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);

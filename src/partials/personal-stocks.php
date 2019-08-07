@@ -41,7 +41,6 @@
                     echo "</table>";
                 }
                 else {
-                    echo $result->num_rows." results";
                     echo "</table>";
                 }
                 $conn->close();
