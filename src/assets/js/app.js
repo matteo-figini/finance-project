@@ -154,7 +154,6 @@ function convertiValuta() {
                     alert("Non è stato possibile portare a termine la conversione");
             }
             convertedValue = valueToConvert * exchangeRate;
-            convertedValue = convertedValue.toLocaleString();
             $('#valore-finale').val(convertedValue);
         })
     }
@@ -164,6 +163,18 @@ function addStockToDatabase(stockName, stockSymbol, stockCurrency, stockPrice) {
     var xhttp = new XMLHttpRequest();
     var url = '../../assets/backend/add-stock.php?name=' + stockName + '&symbol=' +
     stockSymbol + '&currency=' + stockCurrency;
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+function deleteStockFromDB(stockId) {
+    var xhttp = new XMLHttpRequest();
+    var url = '../../assets/backend/delete-stock.php?id=' + stockId;
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText);

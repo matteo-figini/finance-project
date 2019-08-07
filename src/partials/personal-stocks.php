@@ -33,7 +33,7 @@
                             <td><?php echo $record["Simbolo"] ?></td>
                             <td><?php echo $record["Valuta"] ?></td>
                             <td id=<?php echo "stock-id-".$record["ID"]; ?>>
-                                <i class="fas fa-trash-alt" onclick="console.log(this.parentNode.id);"></i>
+                                <i class="fas fa-trash-alt" onclick="deleteStockFromDB(this.parentNode.id);"></i>
                             </td>
                         </tr>
                 <?php
