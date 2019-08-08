@@ -3,7 +3,6 @@
 <!-- Inclusione dei file di scripting -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../../assets/js/app.js"></script>
-<script src="../../assets/js/w3.js"></script>
 <!-- Inclusione dei fogli di stile -->
 <link rel="stylesheet" href="../../assets/css/w3.css">
 <link rel="stylesheet" href="../../assets/css/app.css">

@@ -221,3 +221,23 @@ function deleteCurrencyFromDB(currencyId) {
     xhttp.open("GET", url, true);
     xhttp.send();
 }
+
+function openMenu() {
+    var mySidebar = $("#mySidebar");
+    var overlayBg = $("#myOverlay");
+    if (mySidebar.css("display") === 'block') {
+        mySidebar.css("display", "none");
+        overlayBg.css("display", "none");
+    }
+    else {
+        mySidebar.css("display", "block");
+        overlayBg.css("display", "block");
+    }
+}
+
+function closeMenu() {
+    var mySidebar = $("#mySidebar");
+    var overlayBg = $("#myOverlay");
+    mySidebar.css("display", "none");
+    overlayBg.css("display", "none");
+}
