@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -17,9 +21,9 @@
                 <div class="w3-container w3-row-padding w3-margin-bottom">
                     <form action="" method="post">
                         <label>Username: </label><br>
-                        <input type="text" name="username" placeholder="Il tuo username"><br><br>
+                        <input type="text" name="username" placeholder="Il tuo username" required><br><br>
                         <label>Password: </label><br>
-                        <input type="password" name="password"><br><br>
+                        <input type="password" name="password" required><br><br>
                         <input class="w3-btn w3-blue" type="submit" name="login" value="Accedi"><br><br>
                     </form>
                     <div style="font-size: 11px;">
