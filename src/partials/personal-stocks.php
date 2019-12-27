@@ -12,10 +12,10 @@
         </thead>
         <tbody>
             <?php
-                define("DB_SERVER", "localhost");
-                define("DB_USER", "root");
-                define("DB_PASSWORD", "mysql");
-                define("DB_NAME", "Portafoglio");
+                // define("DB_SERVER", "localhost");
+                // define("DB_USER", "root");
+                // define("DB_PASSWORD", "mysql");
+                // define("DB_NAME", "Portafoglio");
 
                 $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 

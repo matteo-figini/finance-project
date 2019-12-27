@@ -1,11 +1,7 @@
 <?php
 
 // TODO: Aggiungere un controllo per evitare di inserire due volte lo stesso titolo
-
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASSWORD", "mysql");
-define("DB_NAME", "Portafoglio");
+require_once('db-connection.php');
 
 $conn = new mysqli(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
 
